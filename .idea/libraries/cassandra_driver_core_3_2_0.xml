@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="cassandra-driver-core-3.2.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/cassandra-driver-core-3.2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lz4-1.2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/metrics-core-3.0.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/netty-3.2.9.Final.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

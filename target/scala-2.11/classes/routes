@@ -1,0 +1,7 @@
+# Routes
+# This file defines all application routes
+
+# These are example routes used to show the asynchronous call. They are basic operations on Employee data
+GET     /api/employees/:empId               controllers.ApplicationController.getEmployees(empId: String)
+POST    /api/employees                      controllers.ApplicationController.addEmployee
+DELETE  /api/employees/:empId               controllers.ApplicationController.deleteEmployee(empId: String)
