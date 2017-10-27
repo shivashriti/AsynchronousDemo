@@ -2,12 +2,11 @@ package actors
 
 import java.util.concurrent.TimeUnit
 import javax.inject._
-
-import akka.actor.{Actor, ActorRef, Props}
 import actors.ServiceActor._
+import utils.AppDAO
+import akka.actor.{Actor, ActorRef, Props}
 import akka.util.Timeout
 import play.api.Logger
-import utils.AppDAO
 
 import scala.concurrent._
 import ExecutionContext.Implicits.global

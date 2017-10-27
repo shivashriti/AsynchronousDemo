@@ -1,10 +1,9 @@
 package unittest
 
 import java.util.concurrent.TimeUnit
-
+import controllers.ApplicationController
 import akka.actor.ActorSystem
 import akka.util.Timeout
-import controllers.ApplicationController
 import org.scalatestplus.play._
 import play.api.test.FakeRequest
 import play.api._

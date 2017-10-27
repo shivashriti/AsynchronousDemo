@@ -2,11 +2,10 @@ package utils
 
 import java.util.concurrent.TimeUnit
 import javax.inject._
-
+import utils.JsonResponse._
 import akka.util.Timeout
 import com.datastax.driver.core.querybuilder.QueryBuilder
 import play.api.Logger
-import utils.JsonResponse._
 import play.api.http.Status._
 import scala.concurrent.Future
 import scala.concurrent._
@@ -21,14 +20,13 @@ import ExecutionContext.Implicits.global
 * This makes the application modular and clean.*/
 
 trait AppDAO {
-  // This is simple example of GET employee form database
   def getEmployee(empId: String): Future[Option[Employee]]
   def addEmployee(employee: Employee): Future[Option[Int]]
   def deleteEmployee(empId: String): Future[Option[Int]]
 }
 
 @Singleton
- class AppDAOImpl extends AppDAO {
+ object AppDAOImpl extends AppDAO {
   implicit val timeout = Timeout(10, TimeUnit.SECONDS)
 
   def getEmployee(empId: String): Future[Option[Employee]] = Future {

@@ -1,14 +1,13 @@
 package actors
 
 import java.util.concurrent.TimeUnit
-
+import utils.JsonResponse._
+import utils.AppDAOImpl
 import akka.actor.{Actor, ActorRef, ActorSystem, Props}
 import play.api.libs.concurrent.Execution.Implicits.defaultContext
 import akka.pattern.ask
 import akka.util.Timeout
 import play.api.Logger
-import utils.{AppDAO, AppDAOImpl}
-import utils.JsonResponse._
 import play.api.http.Status._
 import scala.concurrent._
 import ExecutionContext.Implicits.global
@@ -35,8 +34,7 @@ object ServiceActor{
 class ServiceActor extends Actor {
   import ServiceActor._
   implicit val system = context.system
-  val appDao: AppDAO = new AppDAOImpl
-  val workerWorker = system.actorOf(Props(classOf[WorkerActor], appDao), "worker-actor")
+  val workerWorker = system.actorOf(Props(classOf[WorkerActor], AppDAOImpl), "worker-actor")
   implicit val timeout = Timeout(10, TimeUnit.SECONDS)
 
   def receive: Receive = {

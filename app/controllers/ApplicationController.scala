@@ -3,9 +3,9 @@ package controllers
 import java.util.concurrent.TimeUnit
 import javax.inject._
 
-import utils.JsonResponse._
 import actors.ServiceActor
 import actors.ServiceActor._
+import utils.JsonResponse._
 import akka.actor.ActorSystem
 import akka.util.Timeout
 import play.api.libs.concurrent.Execution.Implicits.defaultContext
